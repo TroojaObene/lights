@@ -1,6 +1,5 @@
 {
     "values": [
-    "winged:main",
-	"wasd:main"
-]
+        "lights:tick"
+    ]
 }

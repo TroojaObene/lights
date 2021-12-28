@@ -1,6 +1,5 @@
 {
     "values": [
-    "winged:load",
-	"wasd:init"
-]
+        "lights:load"
+    ]
 }
