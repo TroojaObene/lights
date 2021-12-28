@@ -1,2 +1,2 @@
 #still light egg
-give @p bat_spawn_egg{display:{Name:'{"text":"still","color":"red","bold":true}',Lore:['{"text":"The light that is placed down by this egg will be still","color":"dark_purple","bold":true}']},EntityTag:{id:"minecraft:marker",Tags:["still","placed","light"]}} 1
+give @p bat_spawn_egg{display:{Name:'{"text":"Still","color":"red","bold":true}',Lore:['{"text":"The light that is placed down by this egg will be still","color":"dark_purple","bold":true}']},EntityTag:{id:"minecraft:marker",Rotation:[0F,-90F],Tags:["still","placed","light"]}} 1
