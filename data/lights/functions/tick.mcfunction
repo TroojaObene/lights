@@ -8,6 +8,9 @@ execute as @e[type=marker,tag=placed,tag=firework] run function lights:lights/fi
 #game leave give id
 execute as @a[scores={Player_leave=1..}] run function lights:players/give_id
 
+#empty Id selector
+execute as @a[tag=lights] unless score @s selected_Id matches 0 run function lights:empty_id
+
 #be able to see the gui and the light ficture
 execute as @e[type=marker,tag=light] at @s run function lights:light_selector
 
@@ -26,5 +29,3 @@ execute as @e[tag=light,type=marker,tag=moving,tag=delete] at @s run function li
 execute as @e[tag=light,type=marker,tag=fill,tag=delete] at @s run function lights:lights/fill/delete
 execute as @e[tag=light,type=marker,tag=laser,tag=delete] at @s run function lights:lights/laser/delete
 execute as @e[tag=light,type=marker,tag=firework,tag=delete] at @s run function lights:lights/firework/delete
-
-#limit the light groups from 0 to 100
