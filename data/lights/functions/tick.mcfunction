@@ -14,6 +14,11 @@ execute as @e[type=marker,tag=light] at @s run function lights:light_selector
 #enable light techs to select an id
 scoreboard players enable @a[tag=lights] selected_Id
 
+#get eggs trigger
+scoreboard players enable @a[tag=lights] Get_Eggs
+execute as @a[tag=lights,scores={Get_Eggs=0..}] run function lights:give_eggs
+scoreboard players reset @a Get_Eggs
+
 #remove lights with the correct tag
 execute as @e[tag=light,type=marker,tag=still,tag=delete] at @s run function lights:lights/still/delete
 execute as @e[tag=light,type=marker,tag=moving,tag=delete] at @s run function lights:lights/moving/delete
