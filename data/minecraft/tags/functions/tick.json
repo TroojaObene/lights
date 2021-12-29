@@ -1,6 +1,5 @@
 {
     "values": [
-        "lights:tick",
-        "board:tick"
+        "lights:tick"
     ]
 }
