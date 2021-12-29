@@ -2,15 +2,15 @@
 tag @s add controller
 
 #give the selected light the selected tag
-execute as @e[type=marker,tag=moving,tag=light] if score @s Light_Id = @p[tag=controller] selected_Id run tag @s add selected
+execute as @e[type=marker,tag=firework,tag=light] if score @s Light_Id = @p[tag=controller] selected_Id run tag @s add selected
 
 #give the tag to the closest light
 execute as @s at @s run tag @e[tag=light,limit=1,sort=nearest] add nearest_light
 
-#tellraw @s "moving light selected"
+#tellraw @s "firework light selected"
 
 ##visualize the light
-execute as @e[tag=selected] at @s run function lights:lights/moving/visualize
+execute as @e[tag=selected] at @s run function lights:lights/firework/visualize
 
 #empty lines
 tellraw @s "\n\n\n\n\n"
@@ -20,7 +20,7 @@ tellraw @s "\n\n\n\n\n"
 #group edit
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "    "},{"text": "Group","color": "aqua","hoverEvent":{"action":"show_text","contents":[{"text":"Groups are ammounts of fictures that you can select or visualize. Maybe even control","color": "aqua"}]}}]
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "     "},{"text": "[UP]","color": "green","clickEvent": {"action":"run_command","value": "/scoreboard players add @e[tag=light,limit=1,sort=nearest] Light_group 1"},"hoverEvent":{"action":"show_text","contents":[{"text":"Next group","color": "green"}]}}]
-execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "      "},{"score":{"objective": "Light_group","name": "@e[limit=1,tag=selected,tag=light]"},"color": "aqua","clickEvent": {"action":"suggest_command","value": "/scoreboard players set @e[tag=light,tag=moving,limit=1,sort=nearest] Light_group "},"hoverEvent":{"action":"show_text","contents":[{"text":"Type a custom group in!","color": "aqua"}]}}]
+execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "      "},{"score":{"objective": "Light_group","name": "@e[limit=1,tag=selected,tag=light]"},"color": "aqua","clickEvent": {"action":"suggest_command","value": "/scoreboard players set @e[tag=light,tag=firework,limit=1,sort=nearest] Light_group "},"hoverEvent":{"action":"show_text","contents":[{"text":"Type a custom group in!","color": "aqua"}]}}]
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "    "},{"text": "[Down]","color": "red","clickEvent": {"action":"run_command","value": "/scoreboard players remove @e[tag=light,limit=1,sort=nearest] Light_group 1"},"hoverEvent":{"action":"show_text","contents":[{"text":"Previous group","color": "red"}]}}]
 
 #empty line
@@ -46,7 +46,7 @@ execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_ligh
 execute unless score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s ["",{"text":"The closest light is not the selected light, so you can't edit the Pos. and Rot. Please move closer","bold":true,"color":"red"},{"text":"\n","bold":true},{"text":"Selected id:","bold":true,"color":"aqua"},{"score":{"name":"@e[limit=1,tag=selected]","objective":"Light_Id"},"bold":true,"color":"aqua"},{"text":" Closest Id:","bold":true,"color":"gold","hoverEvent":{"action":"show_text","contents":[{"text":"Edit the closest light instead!","color": "green"}]},"clickEvent":{"action":"run_command","value":"/scoreboard players operation @s selected_Id = @e[limit=1,sort=nearest,type=marker,tag=light] Light_Id"}},{"score":{"name":"@e[limit=1,tag=nearest_light]","objective":"Light_Id"},"bold":true,"color":"gold","hoverEvent":{"action":"show_text","contents":[{"text":"Edit the closest light instead!","color": "green"}]},"clickEvent":{"action":"run_command","value":"/scoreboard players operation @s selected_Id = @e[limit=1,sort=nearest,type=marker,tag=light] Light_Id"}}]
 
 #with delete
-execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "\n"},{"text": "[DELETE]","color": "red","hoverEvent":{"action":"show_text","contents":[{"text":"By clicking this, you remove the light from existance. BE AWARE!","color": "red"}]},"clickEvent": {"action":"run_command","value": "/tag @e[limit=1,sort=nearest,type=marker,tag=light,tag=moving] add delete"}}]
+execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "\n"},{"text": "[DELETE]","color": "red","hoverEvent":{"action":"show_text","contents":[{"text":"By clicking this, you remove the light from existance. BE AWARE!","color": "red"}]},"clickEvent": {"action":"run_command","value": "/tag @e[limit=1,sort=nearest,type=marker,tag=light,tag=firework] add delete"}}]
 
 #without delete
 #execute unless score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s ""

@@ -9,11 +9,8 @@ execute as @s at @s run tag @e[tag=light,limit=1,sort=nearest] add nearest_light
 
 #tellraw @s "still light selected"
 
-#display the particles
-execute at @e[type=marker,tag=light,tag=selected] run particle end_rod ~ ~ ~ 0.15 0.15 0.15 0 1 force @s
-#execute at @e[type=marker,tag=light,tag=selected] run particle end_rod ~ ~ ~ ^ ^ ^1 0.1 0 force @s
-execute at @e[type=marker,tag=light,tag=selected] run particle end_rod ^ ^ ^3 0 0 0 0 1 force @s
-execute at @e[type=marker,tag=light,tag=selected] run particle end_rod ^ ^ ^1.5 0 0 0 0 1 force @s
+##visualize the light
+execute as @e[tag=selected] at @s run function lights:lights/still/visualize
 
 #empty lines
 tellraw @s "\n\n\n\n\n"
