@@ -16,7 +16,7 @@ scoreboard players enable @a[tag=lights] selected_Id
 
 #get eggs trigger
 scoreboard players enable @a[tag=lights] Get_Eggs
-execute as @a[tag=lights,scores={Get_Eggs=0..}] run function lights:give_eggs
+execute as @a[tag=lights,scores={Get_Eggs=1..}] run function lights:give_eggs
 scoreboard players reset @a Get_Eggs
 
 #remove lights with the correct tag
