@@ -23,5 +23,8 @@ scoreboard players set @a Get_Eggs 0
 #remove lights with the correct tag
 execute as @e[tag=light,type=marker,tag=still,tag=delete] at @s run function lights:lights/still/delete
 execute as @e[tag=light,type=marker,tag=moving,tag=delete] at @s run function lights:lights/moving/delete
+execute as @e[tag=light,type=marker,tag=fill,tag=delete] at @s run function lights:lights/fill/delete
+execute as @e[tag=light,type=marker,tag=laser,tag=delete] at @s run function lights:lights/laser/delete
+execute as @e[tag=light,type=marker,tag=firework,tag=delete] at @s run function lights:lights/firework/delete
 
 #limit the light groups from 0 to 100
