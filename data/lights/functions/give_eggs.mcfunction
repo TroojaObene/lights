@@ -9,3 +9,6 @@ give @p bat_spawn_egg{display:{Name:'{"text":"Fill","color":"red","bold":true}',
 
 #firework egg
 give @p bat_spawn_egg{display:{Name:'{"text":"Firework","color":"red","bold":true}',Lore:['{"text":"Firework launch fixture","color":"dark_purple","bold":true}']},EntityTag:{id:"minecraft:marker",Rotation:[0F,-90F],Tags:["firework","placed","light"]}} 1
+
+#firework egg
+give @p bat_spawn_egg{display:{Name:'{"text":"Laser","color":"red","bold":true}',Lore:['{"text":"Laser fixture","color":"dark_purple","bold":true}']},EntityTag:{id:"minecraft:marker",Rotation:[0F,-90F],Tags:["laser","placed","light"]}} 1

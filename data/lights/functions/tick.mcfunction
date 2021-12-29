@@ -16,8 +16,9 @@ scoreboard players enable @a[tag=lights] selected_Id
 
 #get eggs trigger
 scoreboard players enable @a[tag=lights] Get_Eggs
+execute as @a[tag=lights,scores={Get_Eggs=1..}] run clear @s bat_spawn_egg
 execute as @a[tag=lights,scores={Get_Eggs=1..}] run function lights:give_eggs
-scoreboard players reset @a Get_Eggs
+scoreboard players set @a Get_Eggs 0
 
 #remove lights with the correct tag
 execute as @e[tag=light,type=marker,tag=still,tag=delete] at @s run function lights:lights/still/delete
