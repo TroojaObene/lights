@@ -10,7 +10,7 @@ execute as @s at @s run tag @e[tag=light,limit=1,sort=nearest] add nearest_light
 #tellraw @s "firework light selected"
 
 ##visualize the light
-execute as @e[tag=selected] at @s run function lights:lights/firework/visualize
+execute at @e[tag=selected] run function lights:lights/firework/visualize
 
 #empty lines
 tellraw @s "\n\n\n\n\n"
