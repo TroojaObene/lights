@@ -22,6 +22,14 @@ execute store result entity @e[type=firework_rocket,tag=fired,limit=1] Motion[0]
 execute store result entity @e[type=firework_rocket,tag=fired,limit=1] Motion[1] double 0.001 run scoreboard players get #endY pos
 execute store result entity @e[type=firework_rocket,tag=fired,limit=1] Motion[2] double 0.001 run scoreboard players get #endZ pos
 
+#add color to fireworks
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Explosions[0].Colors[0] int 1 run scoreboard players get @s F_color
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Explosions[0].FadeColors[0] int 1 run scoreboard players get @s F_FadeColors
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Explosions[0].Flicker int 1 run scoreboard players get @s F_flicker
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Flight int 1 run scoreboard players get @s F_flight
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] LifeTime int 1 run scoreboard players get @s F_lifeTime
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Explosions[0].Trail int 1 run scoreboard players get @s F_trail
+execute store result entity @e[type=firework_rocket,tag=fired,limit=1] FireworksItem.tag.Fireworks.Explosions[0].Type int 1 run scoreboard players get @s F_type
 
 tag @e remove fired
 tag @s remove launch
