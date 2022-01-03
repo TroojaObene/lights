@@ -15,9 +15,10 @@ scoreboard objectives add Get_Eggs trigger
 scoreboard objectives add F_color dummy
 scoreboard objectives add F_type dummy
 scoreboard objectives add F_flight dummy
-scoreboard objectives add F_life dummy
+scoreboard objectives add F_lifeTime dummy
 scoreboard objectives add F_trail dummy
 scoreboard objectives add F_FadeColors dummy
+scoreboard objectives add F_flicker dummy
 
 
 ##turn rot into motion
