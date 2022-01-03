@@ -29,3 +29,7 @@ execute as @e[tag=light,type=marker,tag=moving,tag=delete] at @s run function li
 execute as @e[tag=light,type=marker,tag=fill,tag=delete] at @s run function lights:lights/fill/delete
 execute as @e[tag=light,type=marker,tag=laser,tag=delete] at @s run function lights:lights/laser/delete
 execute as @e[tag=light,type=marker,tag=firework,tag=delete] at @s run function lights:lights/firework/delete
+
+##fireworks
+#launch
+execute as @e[tag=launch,type=marker,tag=firework] at @s run function lights:lights/firework/launch

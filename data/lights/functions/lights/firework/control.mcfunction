@@ -20,13 +20,12 @@ tellraw @s "\n\n\n\n\n"
 #group edit
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/control/group
 
-#empty line
-tellraw @s ""
-#execute unless score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s "\n\n\n\n"
-
 #gui
 #selected light
 tellraw @s ["",{"text": "Selected fixture Id:"},{"text": "  -","color": "red","clickEvent": {"action":"run_command","value": "/scoreboard players remove @s selected_Id 1"},"hoverEvent":{"action":"show_text","contents":[{"text":"Previous ficture","color": "aqua"}]}},{"text": " "},{"score":{"name":"@s","objective":"selected_Id"},"color": "aqua","clickEvent": {"action": "suggest_command","value": "/trigger selected_Id set "},"hoverEvent":{"action":"show_text","contents":[{"text":"type a new selector Id","color": "aqua"}]}},{"text": " "},{"text": "+  ","color": "green","clickEvent": {"action":"run_command","value": "/scoreboard players add @s selected_Id 1"},"hoverEvent":{"action":"show_text","contents":[{"text":"Next ficture","color": "aqua"}]}},{"text": "     "},{"text": "[CLEAR]","color": "red","clickEvent": {"action":"run_command","value": "/scoreboard players set @s selected_Id 0"},"hoverEvent": {"action": "show_text","contents": "Deselect the current light"}}]
+
+#test the firework
+execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run tellraw @s [{"text": "[Test launch]","hoverEvent": {"action": "show_text","contents":[{"text": "launch a test firework","color": "red"}]},"bold": true,"clickEvent": {"action":"run_command","value": "/tag @e[limit=1,sort=nearest,type=marker,tag=light,tag=firework] add launch"},"color": "gold"}]
 
 #position
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/control/move
