@@ -23,7 +23,7 @@ tellraw @s ""
 
 ##firework gui
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/color
-execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/fade
+execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/fadecol
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/flicker
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/lifetime
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/type
