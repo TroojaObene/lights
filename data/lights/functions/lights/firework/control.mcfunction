@@ -19,7 +19,7 @@ tellraw @s "\n\n\n\n\n"
 
 #group edit
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/control/group
-tellraw @s "\n"
+tellraw @s ""
 
 ##firework gui
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/color
@@ -28,7 +28,7 @@ execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_ligh
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/lifetime
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/type
 execute if score @e[limit=1,tag=selected] Light_Id = @e[limit=1,tag=nearest_light] Light_Id run function lights:lights/firework/gui/trail
-tellraw @s "\n"
+tellraw @s ""
 
 #gui
 #selected light
