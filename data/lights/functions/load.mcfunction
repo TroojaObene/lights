@@ -14,7 +14,6 @@ scoreboard objectives add Get_Eggs trigger
 ##fireworks
 scoreboard objectives add F_color dummy
 scoreboard objectives add F_type dummy
-scoreboard objectives add F_flight dummy
 scoreboard objectives add F_lifeTime dummy
 scoreboard objectives add F_trail dummy
 scoreboard objectives add F_FadeColors dummy
